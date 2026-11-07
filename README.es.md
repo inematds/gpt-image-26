@@ -1,12 +1,12 @@
 # GPT Image 2.6 en la práctica
 
-[![GPT Image 2.6 en la práctica](guia/assets/banner-es.jpg)](https://inematds.github.io/gpt-image-26/guia/es/)
+[![GPT Image 2.6 en la práctica](guia/assets/banner-es.jpg)](https://inematds.github.io/gpt-image-26/guia/)
 
 **🇧🇷 [Português](README.md) · 🇺🇸 [English](README.en.md) · 🇪🇸 [Español](README.es.md)**
 
 ## Qué es
 
-GPT Image 2.6 es el modelo de imágenes más nuevo de OpenAI. Ya funciona dentro de ChatGPT y Codex, y también se puede usar mediante la API. Este repositorio es una guía para quienes crean imágenes para publicaciones, anuncios, logos, historias o videos y quieren aprovechar las novedades: el ajuste de complejidad (cuánto planifica el modelo antes de dibujar), GIF animado, logos en formato vectorial (SVG) y edición solo en el área que marcas. Para usarlo, basta con una cuenta de ChatGPT; para la API, necesitas una clave de OpenAI (con un costo aparte de la suscripción) y el script `gerar.py`, que solo requiere Python.
+GPT Image 2.6 es el modelo de imágenes más nuevo de OpenAI, que ya funciona dentro de ChatGPT y Codex y también puede usarse mediante la API. Este repositorio es una guía para quienes crean imágenes para publicaciones, anuncios, logotipos, historias o videos y quieren aprovechar las novedades: el ajuste de complejidad (cuánto planifica el modelo antes de dibujar), GIF animado, logotipo vectorial (SVG) y edición solo en el área que marcas. Para usarlo basta con una cuenta de ChatGPT; para la API, una clave de OpenAI (se cobra por separado de la suscripción) y el script `gerar.py`, que solo necesita Python.
 
 ## 📖 Guía de uso
 
@@ -17,8 +17,8 @@ Guía completa (landing + paso a paso): **https://inematds.github.io/gpt-image-2
 | Archivo | Qué es |
 |---|---|
 | `guia/` | Página de la guía en PT, con `en/` y `es/` |
-| `prompts.md` (en portugués) | 10 prompts listos: estructura, complejidad, instrucciones en secuencia, cartel, personaje, referencia guardada, GIF, SVG, markup y edición |
-| `gerar.py` | Acceso directo a la API (solo biblioteca estándar de Python): genera imágenes, SVG o GIF, o edita con markup, ya con `complexity` y `quality`; comprueba los límites antes de gastar |
+| `prompts.md` | 10 prompts listos (en portugués): estructura, complejidad, instrucciones en secuencia, cartel, personaje, referencia guardada, GIF, SVG, markup y edición |
+| `gerar.py` | Acceso directo a la API (solo biblioteca estándar de Python): genera una imagen, SVG o GIF, o edita con markup, ya con `complexity` y `quality`; comprueba los límites antes de gastar |
 | `exemplos/baixar.py` | Descarga la foto y el círculo de ejemplo de OpenAI para probar la edición con markup |
 | `tests/` | Pruebas de `gerar.py` sin llamar a la API: `python3 -m unittest discover tests` |
 
@@ -26,29 +26,31 @@ Guía completa (landing + paso a paso): **https://inematds.github.io/gpt-image-2
 
 | # | Paso | Comando | Quién lo hace |
 |---|---|---|---|
-| 1 | Elegir el modelo: Flare (rápido) o Sunburst (detallado) | — | 🧠 tú |
-| 2 | Escribir el pedido en secciones (escena, sujeto, detalles, restricciones, texto entre comillas) | `prompts.md` (en portugués) | 🧠 tú |
-| 3 | Ver el pedido sin gastar | `python3 gerar.py "<prompt>" --seco` | ⚙️ script |
+| 1 | Elegir el modelo: Flare (rápido) o Sunburst (detalle) | — | 🧠 tú |
+| 2 | Escribir la solicitud en secciones (escena, sujeto, detalles, restricciones, texto entre comillas) | `prompts.md` | 🧠 tú |
+| 3 | Revisar la solicitud sin gastar | `python3 gerar.py "<prompt>" --seco` | ⚙️ script |
 | 4 | Generar y comparar: primero la complejidad, después la calidad | `python3 gerar.py "<prompt>" --complexity high --quality medium` | ⚙️ script (API, se cobra en tu cuenta) |
 | 5 | Revisar manos, proporciones, reflejos, cantidad y texto | — | 🧠 tú |
-| 6 | Editar una cosa a la vez (o marcarla con markup) | `python3 gerar.py "<cambio>" --editar exemplos/cozinha.webp --markup exemplos/circulo.png --complexity low` | ⚙️ script |
+| 6 | Editar una cosa por vez (o marcarla con markup) | `python3 gerar.py "<cambio>" --editar exemplos/cozinha.webp --markup exemplos/circulo.png --complexity low` | ⚙️ script |
 
 En ChatGPT, los pasos 3, 4 y 6 son solo una conversación: pide la imagen, el GIF («sprite sheet 3x3 … en bucle») o el SVG.
 
 ## Uso rápido de la API
 
 ```bash
-export OPENAI_API_KEY="tu-clave"        # Windows PowerShell: $env:OPENAI_API_KEY="sua-chave"
-python3 gerar.py "Cartel con el texto \"VERANO 2027\"" --modelo sunburst --quality high --seco
-python3 gerar.py "Logo de panadería, formas simples" --formato svg --fundo transparente
-python3 gerar.py "Gato parpadea y vuelve a la pose inicial, cámara fija" --formato gif --quadros 9 --ms 200
+export OPENAI_API_KEY="tu-clave"        # Windows PowerShell: $env:OPENAI_API_KEY="tu-clave"
+python3 gerar.py 'Cartaz com o texto "VERANO 2027"' --modelo sunburst --quality high --seco
+python3 gerar.py "Logo de padaria, formas simples" --formato svg --fundo transparente
+python3 gerar.py "Gato pisca e volta à pose inicial, câmera parada" --formato gif --quadros 9 --ms 200
 python3 exemplos/baixar.py
-python3 gerar.py "Pinta de azul el jarrón dentro del círculo. No cambies nada más. Quita el círculo." --editar exemplos/cozinha.webp --markup exemplos/circulo.png --complexity low
+python3 gerar.py "Pinte de azul o vaso no círculo. Não mude mais nada. Tire o círculo." --editar exemplos/cozinha.webp --markup exemplos/circulo.png --complexity low
 ```
 
-La clave de la API se crea en https://platform.openai.com/api-keys y se cobra aparte de la suscripción a ChatGPT.
+La clave de la API se crea en https://platform.openai.com/api-keys y se cobra por separado de la suscripción de ChatGPT.
 
-`python3 gerar.py --help` muestra todas las opciones y los valores predeterminados (modelo `flare`, calidad `medium`). Cada pedido real se cobra en tu cuenta de OpenAI.
+En Windows, usa `py` en lugar de `python3`. Sin Git, descarga el [ZIP](https://github.com/inematds/gpt-image-26/archive/refs/heads/main.zip).
+
+`python3 gerar.py --help` muestra todas las opciones y los valores predeterminados (modelo `flare`, calidad `medium`). Cada solicitud real se cobra en tu cuenta de OpenAI.
 
 ## Costo (calculadora oficial, imagen 1024×1024)
 
