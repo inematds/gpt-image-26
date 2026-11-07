@@ -1,0 +1,8 @@
+exemplos/*.webp
+exemplos/*.png
+saida*
+__pycache__/
+*.pyc
+guia/assets/*.log
+guia/assets/gen.sh
+guia/assets/hero.png
