@@ -39,7 +39,7 @@ En ChatGPT, los pasos 3, 4 y 6 son solo una conversación: pide la imagen, el GI
 
 ```bash
 export OPENAI_API_KEY="tu-clave"        # Windows PowerShell: $env:OPENAI_API_KEY="tu-clave"
-python3 gerar.py 'Cartaz com o texto "VERANO 2027"' --modelo sunburst --quality high --seco
+python3 gerar.py "Cartel con el texto VERANO 2027" --modelo sunburst --quality high --seco
 python3 gerar.py "Logo de padaria, formas simples" --formato svg --fundo transparente
 python3 gerar.py "Gato pisca e volta à pose inicial, câmera parada" --formato gif --quadros 9 --ms 200
 python3 exemplos/baixar.py

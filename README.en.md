@@ -39,7 +39,7 @@ In ChatGPT, steps 3, 4, and 6 are just a conversation: ask for the image, GIF ("
 
 ```bash
 export OPENAI_API_KEY="your-key"        # Windows PowerShell: $env:OPENAI_API_KEY="sua-chave"
-python3 gerar.py 'Poster with the text "SUMMER 2027"' --modelo sunburst --quality high --seco
+python3 gerar.py "Poster with the text SUMMER 2027" --modelo sunburst --quality high --seco
 python3 gerar.py "Bakery logo, simple shapes" --formato svg --fundo transparente
 python3 gerar.py "Cat blinks and returns to its starting pose, stationary camera" --formato gif --quadros 9 --ms 200
 python3 exemplos/baixar.py

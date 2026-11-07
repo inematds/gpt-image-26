@@ -207,7 +207,7 @@
 <span class="k">export</span> OPENAI_API_KEY=<span class="s">"sua-chave"</span>
 <span class="c"># Windows (PowerShell)</span>
 <span class="k">$env:</span>OPENAI_API_KEY=<span class="s">"sua-chave"</span></pre></div>
-    <div class="card"><h3>🐍 Script del kit</h3><p>Python 3.9 o posterior (<a href="https://www.python.org/downloads/" target="_blank" rel="noopener">python.org</a>); no necesitas instalar paquetes. Descarga el kit con Git o mediante el <a href="https://github.com/inematds/gpt-image-26/archive/refs/heads/main.zip">ZIP</a> y abre la terminal en la carpeta (Mac: app Terminal; Windows: PowerShell). En Windows, cambia <code>python3</code> por <code>py</code>.</p><pre><span class="k">git clone</span> https://github.com/inematds/gpt-image-26
+    <div class="card"><h3>🐍 Script del kit</h3><p>Python 3.9 o posterior (<a href="https://www.python.org/downloads/" target="_blank" rel="noopener">python.org</a>); no necesitas instalar paquetes. Descarga el kit con <a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a> o mediante el <a href="https://github.com/inematds/gpt-image-26/archive/refs/heads/main.zip">ZIP</a> (descomprímelo: la carpeta se llama <code>gpt-image-26-main</code>) y abre la terminal en la carpeta (Mac: app Terminal; Windows: PowerShell). En Windows, cambia <code>python3</code> por <code>py</code>.</p><pre><span class="k">git clone</span> https://github.com/inematds/gpt-image-26
 <span class="k">cd</span> gpt-image-26
 <span class="k">python3 gerar.py</span> --help</pre></div>
   </div>
@@ -268,7 +268,7 @@ No cambies nada más de la imagen. Quita el círculo del resultado.</pre>
   <div class="step"><div class="b">7</div><div>
     <h3>Con la API y el script del kit</h3>
     <p><code>gerar.py</code> arma el pedido con los nombres correctos de los campos y verifica los límites antes de gastar (cuadros del GIF, tamaño en múltiplos de 16, SVG solo al generar). Ejecuta con <code>--seco</code> para ver el pedido sin llamar a la API.</p>
-<pre><span class="k">python3 gerar.py</span> <span class="s">'Cartel con el texto "VERANO 2027"'</span> --modelo sunburst --quality high --seco
+<pre><span class="k">python3 gerar.py</span> <span class="s">"Cartel con el texto VERANO 2027"</span> --modelo sunburst --quality high --seco
 <span class="k">python3 gerar.py</span> <span class="s">"Logotipo de panadería, formas simples"</span> --formato svg --fundo transparente
 <span class="k">python3 gerar.py</span> <span class="s">"Gato parpadea y vuelve a la pose inicial, cámara fija"</span> --formato gif --quadros 9 --ms 200
 <span class="c"># markup con la foto y el círculo de ejemplo de OpenAI</span>
