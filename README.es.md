@@ -12,6 +12,8 @@ GPT Image 2.6 es el modelo de imágenes más nuevo de OpenAI, que ya funciona de
 
 Guía completa (landing + paso a paso): **https://inematds.github.io/gpt-image-26/guia/es/**
 
+🎬 Video: https://www.youtube.com/watch?v=bHTe58nwW3s
+
 ## Contenido
 
 | Archivo | Qué es |

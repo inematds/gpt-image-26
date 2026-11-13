@@ -12,6 +12,8 @@ GPT Image 2.6 is OpenAI’s newest image model, already running inside ChatGPT a
 
 Complete guide (landing page + step-by-step): **https://inematds.github.io/gpt-image-26/guia/en/**
 
+🎬 Video: https://www.youtube.com/watch?v=bHTe58nwW3s
+
 ## Contents
 
 | File | What it is |
